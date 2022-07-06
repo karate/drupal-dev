@@ -1,7 +1,7 @@
 ### Instructions
 
 #### Requirements
-- docker daemnon running
+- docker daemon running
 - docker-compose installed
 
 ```bash
