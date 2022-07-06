@@ -5,3 +5,4 @@ with `apache`, `php` and `MySQL` containers.
 
 - `tmux.sh` is a script that runs tmux and creates windows and panes ruinning `docker`, `vim`, etc.
 ![tmux screenshot](https://github.com/karate/drupal-dev/blob/main/tmux.png?raw=true)
+(my `tmux` configuration can be found here: https://github.com/karate/dotfiles/blob/master/tmux/.tmux.conf)
