@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  web:
+    image: karate/my_d7_project
+    user: ${UID}:${GID}
+    build:
+      context: ./web
+      args:
+        UID: ${UID}
+        GID: ${GID}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ../webapp:/var/www/html
+      - ../_doc:/tmp/_doc
+
+  mysql:
+    image: "mysql:5.7"
+    ports:
+      - "13306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: test
+    volumes:
+      # data dir
+      - ./mysql/data:/var/lib/mysql
+      # DB dumps
+      - ./mysql/backup:/backup
+      # mysql config file
+      - ./mysql/my.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
